@@ -249,7 +249,42 @@ let main_slider = new Swiper('.main-slider__body',{
         prevEl: '.control-main-slider__arrow_prev',
     },
 
-})
+});
+
+
+let lots_slider = new Swiper('.slider-lots__body',{
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 0,
+    //autoHeight: true,
+    speed: 800,
+    loop: true,
+    navigation:{
+        nextEl: '.control-slider-lots__arrow_next',
+        prevEl: '.control-slider-lots__arrow_prev',
+    },
+
+    breakpoints:{
+
+        320:{
+            slidesPerView: 1,
+        },
+        550:{
+            slidesPerView: 2,
+        },
+        768:{
+            slidesPerView: 3,
+        }
+    },
+
+    on:{
+        lazyImageReady: function(){
+            ibg();
+        },
+    }
+
+});
 };
 
 let  user_icon = document.querySelector('.user-header__icon');
@@ -264,7 +299,7 @@ let  user_icon = document.querySelector('.user-header__icon');
 document.documentElement.addEventListener("click", function(e){
    if(!e.target.closest('.user-header')){
       let user_menu = document.querySelector('.user-header__menu');
-      ser_menu.classList.remove('_active');
+      user_menu.classList.remove('_active');
    }
 });
 
