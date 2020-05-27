@@ -285,6 +285,37 @@ let lots_slider = new Swiper('.slider-lots__body',{
     }
 
 });
+
+let quotes_slider = new Swiper('.slider-quotes__body',{
+   
+    effect: 'fade',
+    /*autoplay:{
+        delay: 3000,
+        disableOnInteraction: false;
+    },*/
+   
+   
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    //autoHeight: true,
+    speed: 1000,
+    loop: true,
+    navigation:{
+        nextEl: '.control-slider-quotes__circle',
+        
+    },
+    breakpoints:{
+        320:{
+            autoHeight: true, 
+        },
+        570:{
+           autoHeight: false, 
+        },
+    },
+});
+
 };
 
 let  user_icon = document.querySelector('.user-header__icon');
